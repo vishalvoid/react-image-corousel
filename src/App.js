@@ -11,7 +11,6 @@ import image_8 from "./assets/Corousel_Img/img_8.jpg";
 
 function App() {
   const [activeImage, setactiveImage] = useState(0);
-  console.log(activeImage);
 
   const images = [
     image_1,
@@ -25,6 +24,7 @@ function App() {
   ];
 
   return (
+    // Hero Image Section
     <div className="image_container-primary">
       <img
         src={images[activeImage]}
@@ -32,6 +32,7 @@ function App() {
         className="image_container__hero-image"
       />
 
+      {/* Corousel Images Secton  */}
       <div className="image_container-secondary">
         <div className="image_container__corousel">
           {images.map((item, index) => {
@@ -48,6 +49,8 @@ function App() {
               />
             );
           })}
+
+          {/* Buttons for previous and next.  */}
           <div className="images_container__corousel--button">
             <button
               onClick={() => {
